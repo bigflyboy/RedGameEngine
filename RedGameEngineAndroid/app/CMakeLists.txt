@@ -21,6 +21,11 @@ add_library(
              src/main/cpp/RedEngine/Shader/Shader.cpp
 
              src/main/cpp/RedEngine/File/AssetFile.cpp
+
+             src/main/cpp/SOIL/SOIL.c
+             src/main/cpp/SOIL/image_DXT.c
+             src/main/cpp/SOIL/image_helper.c
+             src/main/cpp/SOIL/stb_image_aug.c
              )
 
 # Searches for a specified prebuilt library and stores the path as a

@@ -9,6 +9,8 @@
 #include "RedEngine/Shader/ShaderProgram.h"
 #include "RedEngine/Shader/Shader.h"
 
+#include "SOIL/SOIL.h"
+
 extern "C"
 {
 
@@ -41,6 +43,12 @@ Java_com_redknot_tool_NativeMethod_start(JNIEnv *env, jclass type,jobject assetM
     shaderProgram->AddShader(v_shader->ShaderId);
     shaderProgram->AddShader(f_shader->ShaderId);
     programId = shaderProgram->ProgramId;
+
+    GLuint texture;
+    SOIL_asset_load_OGL_texture("text.jpg",
+                                SOIL_LOAD_AUTO,
+                                texture,
+                                SOIL_FLAG_INVERT_Y);
 
     delete (shaderProgram);
     delete (v_shader);
